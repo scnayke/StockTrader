@@ -1,1 +1,2 @@
 # StockTrader
+Trading stratergy analysis

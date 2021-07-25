@@ -5,7 +5,6 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPageWidget extends StatefulWidget {
@@ -340,35 +339,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       )
                                     ],
                                   ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 15),
-                              child: FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
-                                },
-                                text: 'Sign in with Apple',
-                                icon: FaIcon(
-                                  FontAwesomeIcons.apple,
-                                  size: 20,
-                                ),
-                                options: FFButtonOptions(
-                                  width: 200,
-                                  height: 44,
-                                  color: Colors.white,
-                                  textStyle: GoogleFonts.getFont(
-                                    'Roboto',
-                                    color: Colors.black,
-                                    fontSize: 15,
-                                  ),
-                                  elevation: 4,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 0,
-                                  ),
-                                  borderRadius: 12,
                                 ),
                               ),
                             ),

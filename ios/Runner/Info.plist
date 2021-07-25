@@ -25,15 +25,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.856987947615-nbg13d67dn5k6pnq7tqgpabg7s814nfu</string>
-                <string>fbCREATE_YOUR_OWN_FB_APP</string>
+				<string>com.googleusercontent.apps.941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6</string>
+                <string>fb219739153368384</string>
 			</array>
 		</dict>
 	</array>
     <key>FacebookAppID</key>
-    <string>CREATE_YOUR_OWN_FB_APP</string>
+    <string>219739153368384</string>
     <key>FacebookDisplayName</key>
-    <string>FlutterMet</string>
+    <string>Updated</string>
 
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>

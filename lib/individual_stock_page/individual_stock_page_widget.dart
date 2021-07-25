@@ -343,7 +343,7 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
                               padding: EdgeInsets.fromLTRB(5, 0, 10, 0),
                               child: Card(
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: FlutterFlowTheme.tertiaryColor,
+                                color: FlutterFlowTheme.primaryColor,
                                 child: Align(
                                   alignment: Alignment(0, 0),
                                   child: RatingBarIndicator(
@@ -382,7 +382,7 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
                                   options: FFButtonOptions(
                                     width: 130,
                                     height: 40,
-                                    color: FlutterFlowTheme.primaryColor,
+                                    color: FlutterFlowTheme.tertiaryColor,
                                     textStyle:
                                         FlutterFlowTheme.subtitle2.override(
                                       fontFamily: 'Lato',
@@ -407,7 +407,7 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
             ),
             Container(
               width: double.infinity,
-              height: 84,
+              height: 69,
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.secondaryColor,
                 border: Border.all(

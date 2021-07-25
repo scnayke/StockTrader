@@ -59,7 +59,6 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 210,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.tertiaryColor,
                   ),
@@ -90,7 +89,7 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
                                     alignment: Alignment(-1, 0),
                                     child: Padding(
                                       padding:
-                                          EdgeInsets.fromLTRB(24, 34, 0, 0),
+                                          EdgeInsets.fromLTRB(24, 44, 0, 0),
                                       child: Text(
                                         'User.name@domainname.com',
                                         textAlign: TextAlign.start,
@@ -124,38 +123,6 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
                               ),
                             )
                           ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                                child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
-                                  },
-                                  text: 'View Saved Stocks',
-                                  options: FFButtonOptions(
-                                    width: 100,
-                                    height: 40,
-                                    color: FlutterFlowTheme.primaryColor,
-                                    textStyle:
-                                        FlutterFlowTheme.subtitle2.override(
-                                      fontFamily: 'Lato',
-                                      color: Colors.white,
-                                    ),
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1,
-                                    ),
-                                    borderRadius: 20,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
                         )
                       ],
                     ),
@@ -166,6 +133,11 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
             Column(
               mainAxisSize: MainAxisSize.max,
               children: [
+                Divider(
+                  indent: 10,
+                  endIndent: 10,
+                  color: FlutterFlowTheme.primaryColor,
+                ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -175,11 +147,17 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
                         'Account Settings',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Source Sans Pro',
+                          color: FlutterFlowTheme.primaryColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     )
                   ],
+                ),
+                Divider(
+                  indent: 10,
+                  endIndent: 10,
+                  color: FlutterFlowTheme.primaryColor,
                 )
               ],
             ),
@@ -406,7 +384,7 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
                 scrollDirection: Axis.vertical,
                 children: [
                   Container(
-                    height: 200,
+                    height: 190,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.tertiaryColor,
                     ),
@@ -419,7 +397,6 @@ class _MyWatchListWidgetState extends State<MyWatchListWidget> {
                       ),
                       child: Container(
                         width: double.infinity,
-                        height: 200,
                         decoration: BoxDecoration(
                           color: Colors.transparent,
                         ),

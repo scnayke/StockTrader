@@ -1,42 +1,49 @@
 {
   "project_info": {
-    "project_number": "856987947615",
-    "project_id": "updated-1f1a9",
-    "storage_bucket": "updated-1f1a9.appspot.com"
+    "project_number": "941382039914",
+    "project_id": "stocktrader-cc7c3",
+    "storage_bucket": "stocktrader-cc7c3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:856987947615:android:bf518ed8281efe46fe01ea",
+        "mobilesdk_app_id": "1:941382039914:android:f8bb01cabad67f7ff8cd13",
         "android_client_info": {
           "package_name": "com.flutterflow.updated"
         }
       },
       "oauth_client": [
         {
-          "client_id": "856987947615-s373utv7q6ucab34h46u7vj4095s64gv.apps.googleusercontent.com",
+          "client_id": "941382039914-8is73ocutbv26ffc35ue5panm3he6uoc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.flutterflow.updated",
-            "certificate_hash": "1b332ccbf6c5c19f03d01e31e2b0a3dcd9f93b73"
+            "certificate_hash": "19bbbdec357c4bf8e170758ceb2edecbe9d9ec22"
           }
         },
         {
-          "client_id": "856987947615-813uga93o0bmu1241h0b162oeacc4ot9.apps.googleusercontent.com",
+          "client_id": "941382039914-ae8uklfi49khsnk9hgjj3ddbbvpsq04j.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDrcp5S2JkY59h-3H6gubA13qRMJy3KyP8"
+          "current_key": "AIzaSyDMugiWyFNh2XgYcGQiccQenq6Ym2fFY60"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "856987947615-813uga93o0bmu1241h0b162oeacc4ot9.apps.googleusercontent.com",
+              "client_id": "941382039914-ae8uklfi49khsnk9hgjj3ddbbvpsq04j.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.updated"
+              }
             }
           ]
         }

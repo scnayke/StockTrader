@@ -4,6 +4,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../login_page/login_page_widget.dart';
+import '../main.dart';
 import '../stocklist_page/stocklist_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +40,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: 210,
+                  height: 185,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.tertiaryColor,
                   ),
@@ -113,8 +114,14 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                                 child: FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => NavBarPage(
+                                            initialPage: 'MyWatchList'),
+                                      ),
+                                    );
                                   },
                                   text: 'View Saved Stocks',
                                   options: FFButtonOptions(
@@ -155,6 +162,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                         'Account Settings',
                         style: FlutterFlowTheme.bodyText1.override(
                           fontFamily: 'Source Sans Pro',
+                          color: FlutterFlowTheme.primaryColor,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -607,7 +615,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                 padding: EdgeInsets.fromLTRB(
                                                     10, 10, 10, 5),
                                                 child: Text(
-                                                  gridViewIndicesRecord.index,
+                                                  'indexName',
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.title1
                                                       .override(

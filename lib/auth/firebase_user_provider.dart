@@ -1,18 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rxdart/rxdart.dart';
 
-class UpdatedFirebaseUser {
-  UpdatedFirebaseUser(this.user);
+class Stocktrade1FirebaseUser {
+  Stocktrade1FirebaseUser(this.user);
   final User user;
   bool get loggedIn => user != null;
 }
 
-UpdatedFirebaseUser currentUser;
+Stocktrade1FirebaseUser currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;
-Stream<UpdatedFirebaseUser> updatedFirebaseUserStream() => FirebaseAuth.instance
+Stream<Stocktrade1FirebaseUser> stocktrade1FirebaseUserStream() => FirebaseAuth
+    .instance
     .authStateChanges()
     .debounce((user) => user == null && !loggedIn
         ? TimerStream(true, const Duration(seconds: 1))
         : Stream.value(user))
-    .map<UpdatedFirebaseUser>(
-        (user) => currentUser = UpdatedFirebaseUser(user));
+    .map<Stocktrade1FirebaseUser>(
+        (user) => currentUser = Stocktrade1FirebaseUser(user));

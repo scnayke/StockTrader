@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -52,7 +53,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
           ),
         ),
         title: Text(
-          widget.indexParam,
+          'indexName',
           style: FlutterFlowTheme.bodyText2.override(
             fontFamily: 'Source Sans Pro',
             color: FlutterFlowTheme.secondaryColor,
@@ -220,12 +221,33 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text(
-                                              listViewTickersRecord.ticker,
-                                              style: FlutterFlowTheme.title2
-                                                  .override(
-                                                fontFamily: 'Lato',
-                                              ),
+                                            FutureBuilder<dynamic>(
+                                              future: companyCall(),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50,
+                                                      height: 50,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        color: FlutterFlowTheme
+                                                            .primaryColor,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                final textCompanyResponse =
+                                                    snapshot.data;
+                                                return Text(
+                                                  listViewTickersRecord.ticker,
+                                                  style: FlutterFlowTheme.title2
+                                                      .override(
+                                                    fontFamily: 'Lato',
+                                                  ),
+                                                );
+                                              },
                                             ),
                                             Padding(
                                               padding: EdgeInsets.fromLTRB(

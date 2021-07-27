@@ -71,7 +71,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Padding(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 100),
+                              padding: EdgeInsets.fromLTRB(0, 0, 0, 50),
                               child: Text(
                                 'Stock Trader',
                                 style: FlutterFlowTheme.title1.override(
@@ -352,8 +352,20 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     Align(
                                       alignment: Alignment(0, 0),
                                       child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
+                                        onPressed: () async {
+                                          final user =
+                                              await signInWithFacebook(context);
+                                          if (user == null) {
+                                            return;
+                                          }
+                                          await Navigator.pushAndRemoveUntil(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => NavBarPage(
+                                                  initialPage: 'HomeIndexPage'),
+                                            ),
+                                            (r) => false,
+                                          );
                                         },
                                         text: 'Login with Facebook',
                                         icon: Icon(

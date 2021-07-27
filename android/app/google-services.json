@@ -1,49 +1,34 @@
 {
   "project_info": {
-    "project_number": "941382039914",
-    "project_id": "stocktrader-cc7c3",
-    "storage_bucket": "stocktrader-cc7c3.appspot.com"
+    "project_number": "935889843298",
+    "project_id": "stocktrader1-a86f8",
+    "storage_bucket": "stocktrader1-a86f8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:941382039914:android:f8bb01cabad67f7ff8cd13",
+        "mobilesdk_app_id": "1:935889843298:android:ac79523fd603db27d54d3b",
         "android_client_info": {
-          "package_name": "com.flutterflow.updated"
+          "package_name": "com.flutterflow.stocktrade1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "941382039914-8is73ocutbv26ffc35ue5panm3he6uoc.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flutterflow.updated",
-            "certificate_hash": "19bbbdec357c4bf8e170758ceb2edecbe9d9ec22"
-          }
-        },
-        {
-          "client_id": "941382039914-ae8uklfi49khsnk9hgjj3ddbbvpsq04j.apps.googleusercontent.com",
+          "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDMugiWyFNh2XgYcGQiccQenq6Ym2fFY60"
+          "current_key": "AIzaSyDz87QZRxz3TR4eY9I3LRLnn_r1uhzLK9Q"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "941382039914-ae8uklfi49khsnk9hgjj3ddbbvpsq04j.apps.googleusercontent.com",
+              "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.flutterflow.updated"
-              }
             }
           ]
         }

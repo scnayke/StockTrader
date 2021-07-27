@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
-import 'package:updated/login_page/login_page_widget.dart';
+import 'package:stocktrade1/login_page/login_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'home_index_page/home_index_page_widget.dart';
 import 'my_watch_list/my_watch_list_widget.dart';
@@ -19,20 +19,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Stream<UpdatedFirebaseUser> userStream;
-  UpdatedFirebaseUser initialUser;
+  Stream<Stocktrade1FirebaseUser> userStream;
+  Stocktrade1FirebaseUser initialUser;
 
   @override
   void initState() {
     super.initState();
-    userStream = updatedFirebaseUserStream()
+    userStream = stocktrade1FirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Updated',
+      title: 'stocktrade1',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: initialUser == null
           ? const Center(

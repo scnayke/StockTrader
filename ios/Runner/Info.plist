@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>updated</string>
+	<string>stocktrade1</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -25,15 +25,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6</string>
-                <string>fb219739153368384</string>
+				<string>com.googleusercontent.apps.935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn</string>
+                <string>fb184223597089737</string>
 			</array>
 		</dict>
 	</array>
     <key>FacebookAppID</key>
-    <string>219739153368384</string>
+    <string>184223597089737</string>
     <key>FacebookDisplayName</key>
-    <string>Updated</string>
+    <string>stocktrade1</string>
 
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>

@@ -499,10 +499,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                           height: 10,
                         ),
                         StreamBuilder<List<IndicesRecord>>(
-                          stream: queryIndicesRecord(
-                            queryBuilder: (indicesRecord) =>
-                                indicesRecord.orderBy('equity'),
-                          ),
+                          stream: queryIndicesRecord(),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
@@ -549,10 +546,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            StocklistPageWidget(
-                                          indexParam:
-                                              gridViewIndicesRecord.index,
-                                        ),
+                                            StocklistPageWidget(),
                                       ),
                                     );
                                   },
@@ -585,8 +579,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                       alignment:
                                                           Alignment(0, 0),
                                                       child: Text(
-                                                        gridViewIndicesRecord
-                                                            .equity,
+                                                        'Hello World',
                                                         style: FlutterFlowTheme
                                                             .subtitle1
                                                             .override(

@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../components/buy_sell_call_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -68,13 +69,31 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'StockName',
-                            style: FlutterFlowTheme.title1.override(
-                              fontFamily: 'Montserrat',
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                          FutureBuilder<dynamic>(
+                            future: companyCall(),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50,
+                                    height: 50,
+                                    child: CircularProgressIndicator(
+                                      color: FlutterFlowTheme.primaryColor,
+                                    ),
+                                  ),
+                                );
+                              }
+                              final textCompanyResponse = snapshot.data;
+                              return Text(
+                                'StockName',
+                                style: FlutterFlowTheme.title1.override(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              );
+                            },
                           ),
                           Column(
                             mainAxisSize: MainAxisSize.max,

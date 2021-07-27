@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6.apps.googleusercontent.com</string>
+	<string>935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.941382039914-pbgppa2e1fqmvjjn6lb3jrhdlp6l4ch6</string>
+	<string>com.googleusercontent.apps.935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCj7BaUVTfag7-BnBfd37gSZkPm1ZnfEWM</string>
+	<string>AIzaSyCabCXyEL3aPZJRaGAn-Zk4jzAmo0PAtmc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>941382039914</string>
+	<string>935889843298</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.flutterflow.updated</string>
+	<string>com.flutterflow.stocktrade1</string>
 	<key>PROJECT_ID</key>
-	<string>stocktrader-cc7c3</string>
+	<string>stocktrader1-a86f8</string>
 	<key>STORAGE_BUCKET</key>
-	<string>stocktrader-cc7c3.appspot.com</string>
+	<string>stocktrader1-a86f8.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:941382039914:ios:27aec819b4b4968cf8cd13</string>
+	<string>1:935889843298:ios:ce8a8fc5edb16b19d54d3b</string>
 </dict>
 </plist>

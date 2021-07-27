@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-    <string name="app_name">Updated</string>
-    <string name="facebook_app_id">219739153368384</string>
-               <string name="fb_login_protocol_scheme">fb219739153368384</string>
+    <string name="app_name">stocktrade1</string>
+    <string name="facebook_app_id">184223597089737</string>
+               <string name="fb_login_protocol_scheme">fb184223597089737</string>
 </resources>

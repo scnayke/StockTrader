@@ -14,15 +14,11 @@ abstract class IndicesRecord
   String get index;
 
   @nullable
-  String get equity;
-
-  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
-  static void _initializeBuilder(IndicesRecordBuilder builder) => builder
-    ..index = ''
-    ..equity = '';
+  static void _initializeBuilder(IndicesRecordBuilder builder) =>
+      builder..index = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('indices');
@@ -43,10 +39,6 @@ abstract class IndicesRecord
 
 Map<String, dynamic> createIndicesRecordData({
   String index,
-  String equity,
 }) =>
     serializers.toFirestore(
-        IndicesRecord.serializer,
-        IndicesRecord((i) => i
-          ..index = index
-          ..equity = equity));
+        IndicesRecord.serializer, IndicesRecord((i) => i..index = index));

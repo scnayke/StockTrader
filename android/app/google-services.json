@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "935889843298",
+    "firebase_url": "https://stocktrader1-a86f8-default-rtdb.firebaseio.com",
     "project_id": "stocktrader1-a86f8",
     "storage_bucket": "stocktrader1-a86f8.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "935889843298-93vgh8iavgl6nnkqn6lcv467e65ip1k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutterflow.stocktrade1",
+            "certificate_hash": "19bbbdec357c4bf8e170758ceb2edecbe9d9ec22"
+          }
+        },
         {
           "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +38,13 @@
             {
               "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.stocktrade1"
+              }
             }
           ]
         }

@@ -1,7 +1,6 @@
 import 'package:built_value/standard_json_plugin.dart';
 
 import 'user_table_record.dart';
-import 'indices_record.dart';
 import 'tickers_record.dart';
 
 import 'index.dart';
@@ -14,7 +13,6 @@ const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
   UserTableRecord,
-  IndicesRecord,
   TickersRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()

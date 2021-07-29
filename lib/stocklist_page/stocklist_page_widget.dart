@@ -148,8 +148,8 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
             child: StreamBuilder<List<TickersRecord>>(
               stream: queryTickersRecord(
                 queryBuilder: (tickersRecord) => tickersRecord
-                    .where('index', isEqualTo: widget.indexParam)
-                    .orderBy('ticker'),
+                    .where('SERIES', isEqualTo: widget.indexParam)
+                    .orderBy('NAME_OF_COMPANY'),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -213,100 +213,132 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
-                                      child: SingleChildScrollView(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            FutureBuilder<dynamic>(
-                                              future: companyCall(),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child: SizedBox(
-                                                      width: 50,
-                                                      height: 50,
-                                                      child:
-                                                          CircularProgressIndicator(
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                      ),
-                                                    ),
-                                                  );
-                                                }
-                                                final textCompanyResponse =
-                                                    snapshot.data;
-                                                return Text(
-                                                  listViewTickersRecord.ticker,
-                                                  style: FlutterFlowTheme.title2
-                                                      .override(
-                                                    fontFamily: 'Lato',
-                                                  ),
-                                                );
-                                              },
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  0, 3, 0, 6),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0, 0, 6, 0),
-                                                    child: Text(
-                                                      'previousClose',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                            'Source Sans Pro',
-                                                        color: FlutterFlowTheme
-                                                            .tertiaryColor,
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Expanded(
-                                                    child: AutoSizeText(
-                                                      'currentPrice',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                            'Source Sans Pro',
-                                                        color: FlutterFlowTheme
-                                                            .primaryColor,
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                    ),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                            Text(
-                                              'stock type',
-                                              style: FlutterFlowTheme.bodyText2
-                                                  .override(
-                                                fontFamily: 'Source Sans Pro',
+                                    child: FutureBuilder<dynamic>(
+                                      future: usersCall(),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50,
+                                              height: 50,
+                                              child: CircularProgressIndicator(
                                                 color: FlutterFlowTheme
                                                     .primaryColor,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
+                                            ),
+                                          );
+                                        }
+                                        final columnUsersResponse =
+                                            snapshot.data;
+                                        return Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(12, 0, 0, 0),
+                                          child: SingleChildScrollView(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                FutureBuilder<dynamic>(
+                                                  future: companyCall(),
+                                                  builder: (context, snapshot) {
+                                                    // Customize what your widget looks like when it's loading.
+                                                    if (!snapshot.hasData) {
+                                                      return Center(
+                                                        child: SizedBox(
+                                                          width: 50,
+                                                          height: 50,
+                                                          child:
+                                                              CircularProgressIndicator(
+                                                            color:
+                                                                FlutterFlowTheme
+                                                                    .primaryColor,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                    final textCompanyResponse =
+                                                        snapshot.data;
+                                                    return Text(
+                                                      listViewTickersRecord
+                                                          .nameOfCompany,
+                                                      style: FlutterFlowTheme
+                                                          .title2
+                                                          .override(
+                                                        fontFamily: 'Lato',
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      0, 3, 0, 6),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsets.fromLTRB(
+                                                                0, 0, 6, 0),
+                                                        child: Text(
+                                                          'previousClose',
+                                                          style:
+                                                              FlutterFlowTheme
+                                                                  .bodyText2
+                                                                  .override(
+                                                            fontFamily:
+                                                                'Source Sans Pro',
+                                                            color: FlutterFlowTheme
+                                                                .tertiaryColor,
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        child: AutoSizeText(
+                                                          'currentPrice',
+                                                          style:
+                                                              FlutterFlowTheme
+                                                                  .bodyText2
+                                                                  .override(
+                                                            fontFamily:
+                                                                'Source Sans Pro',
+                                                            color:
+                                                                FlutterFlowTheme
+                                                                    .primaryColor,
+                                                            fontSize: 14,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
+                                                        ),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                                Text(
+                                                  listViewTickersRecord.series,
+                                                  style: FlutterFlowTheme
+                                                      .bodyText2
+                                                      .override(
+                                                    fontFamily:
+                                                        'Source Sans Pro',
+                                                    color: FlutterFlowTheme
+                                                        .primaryColor,
+                                                    fontSize: 14,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                   Icon(

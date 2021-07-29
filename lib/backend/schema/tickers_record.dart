@@ -11,22 +11,25 @@ abstract class TickersRecord
   static Serializer<TickersRecord> get serializer => _$tickersRecordSerializer;
 
   @nullable
-  String get ticker;
+  @BuiltValueField(wireName: 'NAME_OF_COMPANY')
+  String get nameOfCompany;
 
   @nullable
-  String get index;
+  @BuiltValueField(wireName: 'SERIES')
+  String get series;
 
   @nullable
-  String get type;
+  @BuiltValueField(wireName: 'SYMBOL')
+  String get symbol;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(TickersRecordBuilder builder) => builder
-    ..ticker = ''
-    ..index = ''
-    ..type = '';
+    ..nameOfCompany = ''
+    ..series = ''
+    ..symbol = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('tickers');
@@ -46,13 +49,13 @@ abstract class TickersRecord
 }
 
 Map<String, dynamic> createTickersRecordData({
-  String ticker,
-  String index,
-  String type,
+  String nameOfCompany,
+  String series,
+  String symbol,
 }) =>
     serializers.toFirestore(
         TickersRecord.serializer,
         TickersRecord((t) => t
-          ..ticker = ticker
-          ..index = index
-          ..type = type));
+          ..nameOfCompany = nameOfCompany
+          ..series = series
+          ..symbol = symbol));

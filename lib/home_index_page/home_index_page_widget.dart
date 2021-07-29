@@ -498,87 +498,94 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                         Divider(
                           height: 10,
                         ),
-                        StreamBuilder<List<IndicesRecord>>(
-                          stream: queryIndicesRecord(),
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50,
-                                  height: 50,
-                                  child: CircularProgressIndicator(
-                                    color: FlutterFlowTheme.primaryColor,
+                        GridView(
+                          padding: EdgeInsets.zero,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            childAspectRatio: 1.6,
+                          ),
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => StocklistPageWidget(),
                                   ),
+                                );
+                              },
+                              child: Card(
+                                clipBehavior: Clip.antiAliasWithSaveLayer,
+                                color: Colors.white,
+                                elevation: 4,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                              );
-                            }
-                            List<IndicesRecord> gridViewIndicesRecordList =
-                                snapshot.data;
-                            // Customize what your widget looks like with no query results.
-                            if (snapshot.data.isEmpty) {
-                              return Container(
-                                height: 100,
-                                child: Center(
-                                  child: Text('No results.'),
-                                ),
-                              );
-                            }
-                            return GridView.builder(
-                              padding: EdgeInsets.zero,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10,
-                                childAspectRatio: 1.6,
-                              ),
-                              primary: false,
-                              shrinkWrap: true,
-                              scrollDirection: Axis.vertical,
-                              itemCount: gridViewIndicesRecordList.length,
-                              itemBuilder: (context, gridViewIndex) {
-                                final gridViewIndicesRecord =
-                                    gridViewIndicesRecordList[gridViewIndex];
-                                return InkWell(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) =>
-                                            StocklistPageWidget(),
-                                      ),
-                                    );
-                                  },
-                                  child: Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color: Colors.white,
-                                    elevation: 4,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Column(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Expanded(
-                                              child: Align(
-                                                alignment: Alignment(0, 0),
-                                                child: Padding(
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0, 5, 0, 0),
-                                                  child: Container(
-                                                    width: 100,
-                                                    height: 25,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFEEEEEE),
+                                        Expanded(
+                                          child: Align(
+                                            alignment: Alignment(0, 0),
+                                            child: Padding(
+                                              padding: EdgeInsets.fromLTRB(
+                                                  0, 5, 0, 0),
+                                              child: Container(
+                                                width: 100,
+                                                height: 25,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFEEEEEE),
+                                                ),
+                                                child: Align(
+                                                  alignment: Alignment(0, 0),
+                                                  child: StreamBuilder<
+                                                      List<TickersRecord>>(
+                                                    stream: queryTickersRecord(
+                                                      singleRecord: true,
                                                     ),
-                                                    child: Align(
-                                                      alignment:
-                                                          Alignment(0, 0),
-                                                      child: Text(
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50,
+                                                            height: 50,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              color: FlutterFlowTheme
+                                                                  .primaryColor,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<TickersRecord>
+                                                          textTickersRecordList =
+                                                          snapshot.data;
+                                                      // Customize what your widget looks like with no query results.
+                                                      if (snapshot
+                                                          .data.isEmpty) {
+                                                        return Container(
+                                                          height: 100,
+                                                          child: Center(
+                                                            child: Text(
+                                                                'No results.'),
+                                                          ),
+                                                        );
+                                                      }
+                                                      final textTickersRecord =
+                                                          textTickersRecordList
+                                                              .first;
+                                                      return Text(
                                                         'Hello World',
                                                         style: FlutterFlowTheme
                                                             .subtitle1
@@ -589,22 +596,58 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                               FlutterFlowTheme
                                                                   .primaryColor,
                                                         ),
-                                                      ),
-                                                    ),
+                                                      );
+                                                    },
                                                   ),
                                                 ),
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Align(
-                                              alignment: Alignment(0, 0),
-                                              child: Padding(
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Align(
+                                          alignment: Alignment(0, 0),
+                                          child: StreamBuilder<
+                                              List<TickersRecord>>(
+                                            stream: queryTickersRecord(
+                                              singleRecord: true,
+                                            ),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50,
+                                                    height: 50,
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      color: FlutterFlowTheme
+                                                          .primaryColor,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              List<TickersRecord>
+                                                  textTickersRecordList =
+                                                  snapshot.data;
+                                              // Customize what your widget looks like with no query results.
+                                              if (snapshot.data.isEmpty) {
+                                                return Container(
+                                                  height: 100,
+                                                  child: Center(
+                                                    child: Text('No results.'),
+                                                  ),
+                                                );
+                                              }
+                                              final textTickersRecord =
+                                                  textTickersRecordList.first;
+                                              return Padding(
                                                 padding: EdgeInsets.fromLTRB(
                                                     10, 10, 10, 5),
                                                 child: Text(
@@ -615,11 +658,45 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
+                                              );
+                                            },
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                    StreamBuilder<List<TickersRecord>>(
+                                      stream: queryTickersRecord(
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50,
+                                              height: 50,
+                                              child: CircularProgressIndicator(
+                                                color: FlutterFlowTheme
+                                                    .primaryColor,
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                        Padding(
+                                            ),
+                                          );
+                                        }
+                                        List<TickersRecord>
+                                            textTickersRecordList =
+                                            snapshot.data;
+                                        // Customize what your widget looks like with no query results.
+                                        if (snapshot.data.isEmpty) {
+                                          return Container(
+                                            height: 100,
+                                            child: Center(
+                                              child: Text('No results.'),
+                                            ),
+                                          );
+                                        }
+                                        final textTickersRecord =
+                                            textTickersRecordList.first;
+                                        return Padding(
                                           padding:
                                               EdgeInsets.fromLTRB(0, 2, 0, 0),
                                           child: Text(
@@ -629,14 +706,14 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                               fontFamily: 'Source Sans Pro',
                                             ),
                                           ),
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            );
-                          },
+                                        );
+                                      },
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
+                          ],
                         )
                       ],
                     ),

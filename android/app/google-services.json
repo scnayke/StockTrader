@@ -1,46 +1,45 @@
 {
   "project_info": {
-    "project_number": "935889843298",
-    "firebase_url": "https://stocktrader1-a86f8-default-rtdb.firebaseio.com",
-    "project_id": "stocktrader1-a86f8",
-    "storage_bucket": "stocktrader1-a86f8.appspot.com"
+    "project_number": "437253402608",
+    "project_id": "stocktrader1-2db78",
+    "storage_bucket": "stocktrader1-2db78.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:935889843298:android:ac79523fd603db27d54d3b",
+        "mobilesdk_app_id": "1:437253402608:android:76990ef5b9170badebb735",
         "android_client_info": {
-          "package_name": "com.flutterflow.stocktrade1"
+          "package_name": "com.flutterflow.stocktrade12"
         }
       },
       "oauth_client": [
         {
-          "client_id": "935889843298-93vgh8iavgl6nnkqn6lcv467e65ip1k4.apps.googleusercontent.com",
+          "client_id": "437253402608-uar02uddft4hi38p50esq6gs1kcpfgiu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.flutterflow.stocktrade1",
+            "package_name": "com.flutterflow.stocktrade12",
             "certificate_hash": "19bbbdec357c4bf8e170758ceb2edecbe9d9ec22"
           }
         },
         {
-          "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
+          "client_id": "437253402608-ilgd3a2opiaeki4ra6ebhlauddoe14as.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDz87QZRxz3TR4eY9I3LRLnn_r1uhzLK9Q"
+          "current_key": "AIzaSyBKMhtuZ66lB1kJp0DstBHZqHXmpVGcQ4Y"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "935889843298-3lesgo9v1k8ifqkokj5q9m0v5jjv7p17.apps.googleusercontent.com",
+              "client_id": "437253402608-ilgd3a2opiaeki4ra6ebhlauddoe14as.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn.apps.googleusercontent.com",
+              "client_id": "437253402608-64p9th7b889kee4mjlj0on3uo05aq31k.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.flutterflow.stocktrade1"

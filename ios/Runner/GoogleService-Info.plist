@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn.apps.googleusercontent.com</string>
+	<string>437253402608-pbclhe5fkd2cen591i2phe6rm0gicrkg.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.935889843298-trihsasa6d3l2r3votflvgblpp1tlrtn</string>
+	<string>com.googleusercontent.apps.437253402608-pbclhe5fkd2cen591i2phe6rm0gicrkg</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>437253402608-uar02uddft4hi38p50esq6gs1kcpfgiu.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCabCXyEL3aPZJRaGAn-Zk4jzAmo0PAtmc</string>
+	<string>AIzaSyBLQpffjI6gDZSFxMKRsUY6f_mQosEDcwY</string>
 	<key>GCM_SENDER_ID</key>
-	<string>935889843298</string>
+	<string>437253402608</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.flutterflow.stocktrade1</string>
+	<string>com.flutterflow.stocktrade12</string>
 	<key>PROJECT_ID</key>
-	<string>stocktrader1-a86f8</string>
+	<string>stocktrader1-2db78</string>
 	<key>STORAGE_BUCKET</key>
-	<string>stocktrader1-a86f8.appspot.com</string>
+	<string>stocktrader1-2db78.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:935889843298:ios:ce8a8fc5edb16b19d54d3b</string>
+	<string>1:437253402608:ios:1f1910933eb8dd53ebb735</string>
 </dict>
 </plist>

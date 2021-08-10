@@ -1,5 +1,4 @@
 import '../auth/auth_util.dart';
-import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -547,57 +546,15 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                 ),
                                                 child: Align(
                                                   alignment: Alignment(0, 0),
-                                                  child: StreamBuilder<
-                                                      List<TickersRecord>>(
-                                                    stream: queryTickersRecord(
-                                                      singleRecord: true,
+                                                  child: Text(
+                                                    'Hello World',
+                                                    style: FlutterFlowTheme
+                                                        .subtitle1
+                                                        .override(
+                                                      fontFamily: 'Open Sans',
+                                                      color: FlutterFlowTheme
+                                                          .primaryColor,
                                                     ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 50,
-                                                            height: 50,
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              color: FlutterFlowTheme
-                                                                  .primaryColor,
-                                                            ),
-                                                          ),
-                                                        );
-                                                      }
-                                                      List<TickersRecord>
-                                                          textTickersRecordList =
-                                                          snapshot.data;
-                                                      // Customize what your widget looks like with no query results.
-                                                      if (snapshot
-                                                          .data.isEmpty) {
-                                                        return Container(
-                                                          height: 100,
-                                                          child: Center(
-                                                            child: Text(
-                                                                'No results.'),
-                                                          ),
-                                                        );
-                                                      }
-                                                      final textTickersRecord =
-                                                          textTickersRecordList
-                                                              .first;
-                                                      return Text(
-                                                        'Hello World',
-                                                        style: FlutterFlowTheme
-                                                            .subtitle1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Open Sans',
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .primaryColor,
-                                                        ),
-                                                      );
-                                                    },
                                                   ),
                                                 ),
                                               ),
@@ -613,101 +570,43 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                       children: [
                                         Align(
                                           alignment: Alignment(0, 0),
-                                          child: StreamBuilder<
-                                              List<TickersRecord>>(
-                                            stream: queryTickersRecord(
-                                              singleRecord: true,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50,
-                                                    height: 50,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      color: FlutterFlowTheme
-                                                          .primaryColor,
+                                          child: Padding(
+                                            padding: EdgeInsets.fromLTRB(
+                                                10, 10, 10, 5),
+                                            child: InkWell(
+                                              onTap: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StocklistPageWidget(
+                                                      indexParam: '',
                                                     ),
                                                   ),
                                                 );
-                                              }
-                                              List<TickersRecord>
-                                                  textTickersRecordList =
-                                                  snapshot.data;
-                                              // Customize what your widget looks like with no query results.
-                                              if (snapshot.data.isEmpty) {
-                                                return Container(
-                                                  height: 100,
-                                                  child: Center(
-                                                    child: Text('No results.'),
-                                                  ),
-                                                );
-                                              }
-                                              final textTickersRecord =
-                                                  textTickersRecordList.first;
-                                              return Padding(
-                                                padding: EdgeInsets.fromLTRB(
-                                                    10, 10, 10, 5),
-                                                child: Text(
-                                                  'indexName',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.title1
-                                                      .override(
-                                                    fontFamily: 'Montserrat',
-                                                  ),
+                                              },
+                                              child: Text(
+                                                'indexName',
+                                                textAlign: TextAlign.center,
+                                                style: FlutterFlowTheme.title1
+                                                    .override(
+                                                  fontFamily: 'Montserrat',
                                                 ),
-                                              );
-                                            },
+                                              ),
+                                            ),
                                           ),
                                         )
                                       ],
                                     ),
-                                    StreamBuilder<List<TickersRecord>>(
-                                      stream: queryTickersRecord(
-                                        singleRecord: true,
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
+                                      child: Text(
+                                        'change%',
+                                        style:
+                                            FlutterFlowTheme.bodyText1.override(
+                                          fontFamily: 'Source Sans Pro',
+                                        ),
                                       ),
-                                      builder: (context, snapshot) {
-                                        // Customize what your widget looks like when it's loading.
-                                        if (!snapshot.hasData) {
-                                          return Center(
-                                            child: SizedBox(
-                                              width: 50,
-                                              height: 50,
-                                              child: CircularProgressIndicator(
-                                                color: FlutterFlowTheme
-                                                    .primaryColor,
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                        List<TickersRecord>
-                                            textTickersRecordList =
-                                            snapshot.data;
-                                        // Customize what your widget looks like with no query results.
-                                        if (snapshot.data.isEmpty) {
-                                          return Container(
-                                            height: 100,
-                                            child: Center(
-                                              child: Text('No results.'),
-                                            ),
-                                          );
-                                        }
-                                        final textTickersRecord =
-                                            textTickersRecordList.first;
-                                        return Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(0, 2, 0, 0),
-                                          child: Text(
-                                            'change%',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Source Sans Pro',
-                                            ),
-                                          ),
-                                        );
-                                      },
                                     )
                                   ],
                                 ),

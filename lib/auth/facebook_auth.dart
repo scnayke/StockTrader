@@ -6,7 +6,8 @@ import 'auth_util.dart';
 
 Future<UserCredential> facebookSignIn() async {
   // Trigger the sign-in flow
-  final AccessToken result = await FacebookAuth.instance.login();
+  final LoginResult loginToken = await FacebookAuth.instance.login();
+  final AccessToken result = loginToken.accessToken;
 
   // Create a credential from the access token
   final FacebookAuthCredential facebookAuthCredential =

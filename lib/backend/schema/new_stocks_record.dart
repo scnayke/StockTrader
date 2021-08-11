@@ -15,11 +15,16 @@ abstract class NewStocksRecord
   String get name;
 
   @nullable
+  @BuiltValueField(wireName: 'index_name')
+  String get indexName;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
-  static void _initializeBuilder(NewStocksRecordBuilder builder) =>
-      builder..name = '';
+  static void _initializeBuilder(NewStocksRecordBuilder builder) => builder
+    ..name = ''
+    ..indexName = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('new_stocks');
@@ -40,6 +45,10 @@ abstract class NewStocksRecord
 
 Map<String, dynamic> createNewStocksRecordData({
   String name,
+  String indexName,
 }) =>
     serializers.toFirestore(
-        NewStocksRecord.serializer, NewStocksRecord((n) => n..name = name));
+        NewStocksRecord.serializer,
+        NewStocksRecord((n) => n
+          ..name = name
+          ..indexName = indexName));

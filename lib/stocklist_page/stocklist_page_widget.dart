@@ -145,7 +145,10 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
           ),
           Expanded(
             child: StreamBuilder<List<NewStocksRecord>>(
-              stream: queryNewStocksRecord(),
+              stream: queryNewStocksRecord(
+                queryBuilder: (newStocksRecord) => newStocksRecord
+                    .where('index_name', isEqualTo: widget.indexName),
+              ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {

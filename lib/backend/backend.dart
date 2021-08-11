@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/user_table_record.dart';
 import 'schema/stocks_record.dart';
+import 'schema/new_indices_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -14,6 +15,7 @@ export 'schema/serializers.dart';
 
 export 'schema/user_table_record.dart';
 export 'schema/stocks_record.dart';
+export 'schema/new_indices_record.dart';
 
 Stream<List<UserTableRecord>> queryUserTableRecord(
         {Query Function(Query) queryBuilder,
@@ -27,6 +29,13 @@ Stream<List<StocksRecord>> queryStocksRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(StocksRecord.collection, StocksRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<NewIndicesRecord>> queryNewIndicesRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(NewIndicesRecord.collection, NewIndicesRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

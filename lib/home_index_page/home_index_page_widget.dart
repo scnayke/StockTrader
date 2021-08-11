@@ -1,4 +1,5 @@
 import '../auth/auth_util.dart';
+import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -497,122 +498,160 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                         Divider(
                           height: 10,
                         ),
-                        GridView(
-                          padding: EdgeInsets.zero,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 10,
-                            mainAxisSpacing: 10,
-                            childAspectRatio: 1.6,
-                          ),
-                          primary: false,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          children: [
-                            InkWell(
-                              onTap: () async {
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => StocklistPageWidget(),
+                        StreamBuilder<List<NewIndicesRecord>>(
+                          stream: queryNewIndicesRecord(),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50,
+                                  height: 50,
+                                  child: CircularProgressIndicator(
+                                    color: FlutterFlowTheme.primaryColor,
+                                  ),
+                                ),
+                              );
+                            }
+                            List<NewIndicesRecord>
+                                gridViewNewIndicesRecordList = snapshot.data;
+                            // Customize what your widget looks like with no query results.
+                            if (snapshot.data.isEmpty) {
+                              return Container(
+                                height: 100,
+                                child: Center(
+                                  child: Text('No results.'),
+                                ),
+                              );
+                            }
+                            return GridView.builder(
+                              padding: EdgeInsets.zero,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 10,
+                                mainAxisSpacing: 10,
+                                childAspectRatio: 1.6,
+                              ),
+                              primary: false,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: gridViewNewIndicesRecordList.length,
+                              itemBuilder: (context, gridViewIndex) {
+                                final gridViewNewIndicesRecord =
+                                    gridViewNewIndicesRecordList[gridViewIndex];
+                                return InkWell(
+                                  onTap: () async {
+                                    await Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            StocklistPageWidget(),
+                                      ),
+                                    );
+                                  },
+                                  child: Card(
+                                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                                    color: Colors.white,
+                                    elevation: 4,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              child: Align(
+                                                alignment: Alignment(0, 0),
+                                                child: Padding(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      0, 5, 0, 0),
+                                                  child: Container(
+                                                    width: 100,
+                                                    height: 25,
+                                                    decoration: BoxDecoration(
+                                                      color: Color(0xFFEEEEEE),
+                                                    ),
+                                                    child: Align(
+                                                      alignment:
+                                                          Alignment(0, 0),
+                                                      child: Text(
+                                                        'Hello World',
+                                                        style: FlutterFlowTheme
+                                                            .subtitle1
+                                                            .override(
+                                                          fontFamily:
+                                                              'Open Sans',
+                                                          color:
+                                                              FlutterFlowTheme
+                                                                  .primaryColor,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Align(
+                                              alignment: Alignment(0, 0),
+                                              child: Padding(
+                                                padding: EdgeInsets.fromLTRB(
+                                                    10, 10, 10, 5),
+                                                child: InkWell(
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            StocklistPageWidget(
+                                                          indexParam: '',
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Text(
+                                                    gridViewNewIndicesRecord
+                                                        .indexName,
+                                                    textAlign: TextAlign.center,
+                                                    style: FlutterFlowTheme
+                                                        .title1
+                                                        .override(
+                                                      fontFamily: 'Montserrat',
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsets.fromLTRB(0, 2, 0, 0),
+                                          child: Text(
+                                            'change%',
+                                            style: FlutterFlowTheme.bodyText1
+                                                .override(
+                                              fontFamily: 'Source Sans Pro',
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 );
                               },
-                              child: Card(
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: Colors.white,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment: Alignment(0, 0),
-                                            child: Padding(
-                                              padding: EdgeInsets.fromLTRB(
-                                                  0, 5, 0, 0),
-                                              child: Container(
-                                                width: 100,
-                                                height: 25,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFEEEEEE),
-                                                ),
-                                                child: Align(
-                                                  alignment: Alignment(0, 0),
-                                                  child: Text(
-                                                    'Hello World',
-                                                    style: FlutterFlowTheme
-                                                        .subtitle1
-                                                        .override(
-                                                      fontFamily: 'Open Sans',
-                                                      color: FlutterFlowTheme
-                                                          .primaryColor,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Align(
-                                          alignment: Alignment(0, 0),
-                                          child: Padding(
-                                            padding: EdgeInsets.fromLTRB(
-                                                10, 10, 10, 5),
-                                            child: InkWell(
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        StocklistPageWidget(
-                                                      indexParam: '',
-                                                    ),
-                                                  ),
-                                                );
-                                              },
-                                              child: Text(
-                                                'indexName',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.title1
-                                                    .override(
-                                                  fontFamily: 'Montserrat',
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.fromLTRB(0, 2, 0, 0),
-                                      child: Text(
-                                        'change%',
-                                        style:
-                                            FlutterFlowTheme.bodyText1.override(
-                                          fontFamily: 'Source Sans Pro',
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
+                            );
+                          },
                         )
                       ],
                     ),

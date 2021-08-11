@@ -10,10 +10,10 @@ import 'package:google_fonts/google_fonts.dart';
 class StocklistPageWidget extends StatefulWidget {
   StocklistPageWidget({
     Key key,
-    this.indexParam,
+    this.indexName,
   }) : super(key: key);
 
-  final String indexParam;
+  final String indexName;
 
   @override
   _StocklistPageWidgetState createState() => _StocklistPageWidgetState();
@@ -52,7 +52,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
           ),
         ),
         title: Text(
-          'indexName',
+          widget.indexName,
           style: FlutterFlowTheme.bodyText2.override(
             fontFamily: 'Source Sans Pro',
             color: FlutterFlowTheme.secondaryColor,

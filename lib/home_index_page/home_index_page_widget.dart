@@ -546,7 +546,10 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            StocklistPageWidget(),
+                                            StocklistPageWidget(
+                                          indexName: gridViewNewIndicesRecord
+                                              .indexName,
+                                        ),
                                       ),
                                     );
                                   },
@@ -607,27 +610,13 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                               child: Padding(
                                                 padding: EdgeInsets.fromLTRB(
                                                     10, 10, 10, 5),
-                                                child: InkWell(
-                                                  onTap: () async {
-                                                    await Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            StocklistPageWidget(
-                                                          indexParam: '',
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                  child: Text(
-                                                    gridViewNewIndicesRecord
-                                                        .indexName,
-                                                    textAlign: TextAlign.center,
-                                                    style: FlutterFlowTheme
-                                                        .title1
-                                                        .override(
-                                                      fontFamily: 'Montserrat',
-                                                    ),
+                                                child: Text(
+                                                  gridViewNewIndicesRecord
+                                                      .indexName,
+                                                  textAlign: TextAlign.center,
+                                                  style: FlutterFlowTheme.title1
+                                                      .override(
+                                                    fontFamily: 'Montserrat',
                                                   ),
                                                 ),
                                               ),

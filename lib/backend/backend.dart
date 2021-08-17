@@ -8,6 +8,7 @@ import 'schema/user_table_record.dart';
 import 'schema/stocks_record.dart';
 import 'schema/new_indices_record.dart';
 import 'schema/new_stocks_record.dart';
+import 'schema/neww_stocks_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,6 +19,7 @@ export 'schema/user_table_record.dart';
 export 'schema/stocks_record.dart';
 export 'schema/new_indices_record.dart';
 export 'schema/new_stocks_record.dart';
+export 'schema/neww_stocks_record.dart';
 
 Stream<List<UserTableRecord>> queryUserTableRecord(
         {Query Function(Query) queryBuilder,
@@ -45,6 +47,13 @@ Stream<List<NewStocksRecord>> queryNewStocksRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(NewStocksRecord.collection, NewStocksRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<NewwStocksRecord>> queryNewwStocksRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(NewwStocksRecord.collection, NewwStocksRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

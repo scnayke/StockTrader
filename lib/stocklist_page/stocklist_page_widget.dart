@@ -144,10 +144,10 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
             ],
           ),
           Expanded(
-            child: StreamBuilder<List<NewStocksRecord>>(
-              stream: queryNewStocksRecord(
-                queryBuilder: (newStocksRecord) => newStocksRecord
-                    .where('index_name', isEqualTo: widget.indexName),
+            child: StreamBuilder<List<NewwStocksRecord>>(
+              stream: queryNewwStocksRecord(
+                queryBuilder: (newwStocksRecord) => newwStocksRecord
+                    .where('indices', arrayContains: widget.indexName),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -162,7 +162,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                     ),
                   );
                 }
-                List<NewStocksRecord> listViewNewStocksRecordList =
+                List<NewwStocksRecord> listViewNewwStocksRecordList =
                     snapshot.data;
                 // Customize what your widget looks like with no query results.
                 if (snapshot.data.isEmpty) {
@@ -176,10 +176,10 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                 return ListView.builder(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
-                  itemCount: listViewNewStocksRecordList.length,
+                  itemCount: listViewNewwStocksRecordList.length,
                   itemBuilder: (context, listViewIndex) {
-                    final listViewNewStocksRecord =
-                        listViewNewStocksRecordList[listViewIndex];
+                    final listViewNewwStocksRecord =
+                        listViewNewwStocksRecordList[listViewIndex];
                     return Container(
                       height: 90,
                       decoration: BoxDecoration(
@@ -221,7 +221,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              listViewNewStocksRecord.name,
+                                              listViewNewwStocksRecord.name,
                                               style: FlutterFlowTheme.title2
                                                   .override(
                                                 fontFamily: 'Lato',

@@ -2,8 +2,7 @@ import 'api_manager.dart';
 
 Future<dynamic> usersCall() => ApiManager.instance.makeApiCall(
       callName: 'users',
-      apiDomain: 'stocktrader1-a86f8-default-rtdb.firebaseio.com',
-      apiEndpoint: '',
+      apiUrl: 'https://stocktrader1-a86f8-default-rtdb.firebaseio.com/',
       callType: ApiCallType.POST,
       headers: {},
       params: {},

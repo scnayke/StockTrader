@@ -563,10 +563,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                StocklistPageWidget(
-                                              paramName:
-                                                  gridViewCategoriesRecord,
-                                            ),
+                                                StocklistPageWidget(),
                                           ),
                                         );
                                       },

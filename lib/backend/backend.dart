@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/user_table_record.dart';
-import 'schema/categories_record.dart';
 import 'schema/eq_record.dart';
 import 'schema/bz_record.dart';
 import 'schema/be_record.dart';
@@ -16,7 +15,6 @@ export 'schema/index.dart';
 export 'schema/serializers.dart';
 
 export 'schema/user_table_record.dart';
-export 'schema/categories_record.dart';
 export 'schema/eq_record.dart';
 export 'schema/bz_record.dart';
 export 'schema/be_record.dart';
@@ -26,13 +24,6 @@ Stream<List<UserTableRecord>> queryUserTableRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(UserTableRecord.collection, UserTableRecord.serializer,
-        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
-
-Stream<List<CategoriesRecord>> queryCategoriesRecord(
-        {Query Function(Query) queryBuilder,
-        int limit = -1,
-        bool singleRecord = false}) =>
-    queryCollection(CategoriesRecord.collection, CategoriesRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<EqRecord>> queryEqRecord(

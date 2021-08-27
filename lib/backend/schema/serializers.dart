@@ -1,7 +1,6 @@
 import 'package:built_value/standard_json_plugin.dart';
 
 import 'user_table_record.dart';
-import 'categories_record.dart';
 import 'eq_record.dart';
 import 'bz_record.dart';
 import 'be_record.dart';
@@ -16,7 +15,6 @@ const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
   UserTableRecord,
-  CategoriesRecord,
   EqRecord,
   BzRecord,
   BeRecord,

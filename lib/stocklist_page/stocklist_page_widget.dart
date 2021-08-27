@@ -10,10 +10,10 @@ import 'package:google_fonts/google_fonts.dart';
 class StocklistPageWidget extends StatefulWidget {
   StocklistPageWidget({
     Key key,
-    this.indexName,
+    this.paramName,
   }) : super(key: key);
 
-  final String indexName;
+  final String paramName;
 
   @override
   _StocklistPageWidgetState createState() => _StocklistPageWidgetState();
@@ -52,7 +52,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
           ),
         ),
         title: Text(
-          widget.indexName,
+          widget.paramName,
           style: FlutterFlowTheme.bodyText2.override(
             fontFamily: 'Source Sans Pro',
             color: FlutterFlowTheme.secondaryColor,
@@ -144,10 +144,9 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
             ],
           ),
           Expanded(
-            child: StreamBuilder<List<NewwStocksRecord>>(
-              stream: queryNewwStocksRecord(
-                queryBuilder: (newwStocksRecord) => newwStocksRecord
-                    .where('indices', arrayContains: widget.indexName),
+            child: StreamBuilder<List<EqRecord>>(
+              stream: queryEqRecord(
+                limit: 50,
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -162,8 +161,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                     ),
                   );
                 }
-                List<NewwStocksRecord> listViewNewwStocksRecordList =
-                    snapshot.data;
+                List<EqRecord> listViewEqRecordList = snapshot.data;
                 // Customize what your widget looks like with no query results.
                 if (snapshot.data.isEmpty) {
                   return Container(
@@ -176,10 +174,10 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                 return ListView.builder(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
-                  itemCount: listViewNewwStocksRecordList.length,
+                  itemCount: listViewEqRecordList.length,
                   itemBuilder: (context, listViewIndex) {
-                    final listViewNewwStocksRecord =
-                        listViewNewwStocksRecordList[listViewIndex];
+                    final listViewEqRecord =
+                        listViewEqRecordList[listViewIndex];
                     return Container(
                       height: 90,
                       decoration: BoxDecoration(
@@ -221,7 +219,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              listViewNewwStocksRecord.name,
+                                              listViewEqRecord.name,
                                               style: FlutterFlowTheme.title2
                                                   .override(
                                                 fontFamily: 'Lato',
@@ -233,28 +231,9 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsets.fromLTRB(
-                                                            0, 0, 6, 0),
-                                                    child: Text(
-                                                      'previousClose',
-                                                      style: FlutterFlowTheme
-                                                          .bodyText2
-                                                          .override(
-                                                        fontFamily:
-                                                            'Source Sans Pro',
-                                                        color: FlutterFlowTheme
-                                                            .tertiaryColor,
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                    ),
-                                                  ),
                                                   Expanded(
                                                     child: AutoSizeText(
-                                                      'currentPrice',
+                                                      listViewEqRecord.symbol,
                                                       style: FlutterFlowTheme
                                                           .bodyText2
                                                           .override(
@@ -269,17 +248,6 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
                                                     ),
                                                   )
                                                 ],
-                                              ),
-                                            ),
-                                            Text(
-                                              'stock type',
-                                              style: FlutterFlowTheme.bodyText2
-                                                  .override(
-                                                fontFamily: 'Source Sans Pro',
-                                                color: FlutterFlowTheme
-                                                    .primaryColor,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
                                               ),
                                             )
                                           ],

@@ -1,10 +1,10 @@
 import 'package:built_value/standard_json_plugin.dart';
 
 import 'user_table_record.dart';
-import 'stocks_record.dart';
-import 'new_indices_record.dart';
-import 'new_stocks_record.dart';
-import 'neww_stocks_record.dart';
+import 'categories_record.dart';
+import 'eq_record.dart';
+import 'bz_record.dart';
+import 'be_record.dart';
 
 import 'index.dart';
 
@@ -16,10 +16,10 @@ const kDocumentReferenceField = 'Document__Reference__Field';
 
 @SerializersFor(const [
   UserTableRecord,
-  StocksRecord,
-  NewIndicesRecord,
-  NewStocksRecord,
-  NewwStocksRecord,
+  CategoriesRecord,
+  EqRecord,
+  BzRecord,
+  BeRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

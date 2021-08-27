@@ -498,8 +498,8 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                         Divider(
                           height: 10,
                         ),
-                        StreamBuilder<List<NewIndicesRecord>>(
-                          stream: queryNewIndicesRecord(),
+                        StreamBuilder<List<CategoriesRecord>>(
+                          stream: queryCategoriesRecord(),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
@@ -513,8 +513,8 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                 ),
                               );
                             }
-                            List<NewIndicesRecord>
-                                gridViewNewIndicesRecordList = snapshot.data;
+                            List<CategoriesRecord>
+                                gridViewCategoriesRecordList = snapshot.data;
                             // Customize what your widget looks like with no query results.
                             if (snapshot.data.isEmpty) {
                               return Container(
@@ -536,10 +536,10 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                               primary: false,
                               shrinkWrap: true,
                               scrollDirection: Axis.vertical,
-                              itemCount: gridViewNewIndicesRecordList.length,
+                              itemCount: gridViewCategoriesRecordList.length,
                               itemBuilder: (context, gridViewIndex) {
-                                final gridViewNewIndicesRecord =
-                                    gridViewNewIndicesRecordList[gridViewIndex];
+                                final gridViewCategoriesRecord =
+                                    gridViewCategoriesRecordList[gridViewIndex];
                                 return InkWell(
                                   onTap: () async {
                                     await Navigator.push(
@@ -547,8 +547,8 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                       MaterialPageRoute(
                                         builder: (context) =>
                                             StocklistPageWidget(
-                                          indexName: gridViewNewIndicesRecord
-                                              .indexName,
+                                          paramName:
+                                              gridViewCategoriesRecord.name,
                                         ),
                                       ),
                                     );
@@ -562,44 +562,9 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                     ),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Expanded(
-                                              child: Align(
-                                                alignment: Alignment(0, 0),
-                                                child: Padding(
-                                                  padding: EdgeInsets.fromLTRB(
-                                                      0, 5, 0, 0),
-                                                  child: Container(
-                                                    width: 100,
-                                                    height: 25,
-                                                    decoration: BoxDecoration(
-                                                      color: Color(0xFFEEEEEE),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          Alignment(0, 0),
-                                                      child: Text(
-                                                        'Hello World',
-                                                        style: FlutterFlowTheme
-                                                            .subtitle1
-                                                            .override(
-                                                          fontFamily:
-                                                              'Open Sans',
-                                                          color:
-                                                              FlutterFlowTheme
-                                                                  .primaryColor,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
@@ -611,8 +576,7 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                                 padding: EdgeInsets.fromLTRB(
                                                     10, 10, 10, 5),
                                                 child: Text(
-                                                  gridViewNewIndicesRecord
-                                                      .indexName,
+                                                  gridViewCategoriesRecord.name,
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.title1
                                                       .override(
@@ -622,17 +586,6 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                               ),
                                             )
                                           ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsets.fromLTRB(0, 2, 0, 0),
-                                          child: Text(
-                                            'change%',
-                                            style: FlutterFlowTheme.bodyText1
-                                                .override(
-                                              fontFamily: 'Source Sans Pro',
-                                            ),
-                                          ),
                                         )
                                       ],
                                     ),

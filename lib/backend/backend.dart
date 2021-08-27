@@ -5,10 +5,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 
 import 'schema/user_table_record.dart';
-import 'schema/stocks_record.dart';
-import 'schema/new_indices_record.dart';
-import 'schema/new_stocks_record.dart';
-import 'schema/neww_stocks_record.dart';
+import 'schema/categories_record.dart';
+import 'schema/eq_record.dart';
+import 'schema/bz_record.dart';
+import 'schema/be_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,10 +16,10 @@ export 'schema/index.dart';
 export 'schema/serializers.dart';
 
 export 'schema/user_table_record.dart';
-export 'schema/stocks_record.dart';
-export 'schema/new_indices_record.dart';
-export 'schema/new_stocks_record.dart';
-export 'schema/neww_stocks_record.dart';
+export 'schema/categories_record.dart';
+export 'schema/eq_record.dart';
+export 'schema/bz_record.dart';
+export 'schema/be_record.dart';
 
 Stream<List<UserTableRecord>> queryUserTableRecord(
         {Query Function(Query) queryBuilder,
@@ -28,32 +28,32 @@ Stream<List<UserTableRecord>> queryUserTableRecord(
     queryCollection(UserTableRecord.collection, UserTableRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<StocksRecord>> queryStocksRecord(
+Stream<List<CategoriesRecord>> queryCategoriesRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(StocksRecord.collection, StocksRecord.serializer,
+    queryCollection(CategoriesRecord.collection, CategoriesRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<NewIndicesRecord>> queryNewIndicesRecord(
+Stream<List<EqRecord>> queryEqRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(NewIndicesRecord.collection, NewIndicesRecord.serializer,
+    queryCollection(EqRecord.collection, EqRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<NewStocksRecord>> queryNewStocksRecord(
+Stream<List<BzRecord>> queryBzRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(NewStocksRecord.collection, NewStocksRecord.serializer,
+    queryCollection(BzRecord.collection, BzRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
-Stream<List<NewwStocksRecord>> queryNewwStocksRecord(
+Stream<List<BeRecord>> queryBeRecord(
         {Query Function(Query) queryBuilder,
         int limit = -1,
         bool singleRecord = false}) =>
-    queryCollection(NewwStocksRecord.collection, NewwStocksRecord.serializer,
+    queryCollection(BeRecord.collection, BeRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

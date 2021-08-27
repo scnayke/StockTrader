@@ -12,25 +12,25 @@ service cloud.firestore {
 
     // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
     // security rules for this collection before publishing your app.
-    match /stocks/{id} {
+    match /categories/{id} {
       allow read, write: if true;
     }
 
     // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
     // security rules for this collection before publishing your app.
-    match /new_indices/{id} {
+    match /EQ/{id} {
       allow read, write: if true;
     }
 
     // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
     // security rules for this collection before publishing your app.
-    match /new_stocks/{id} {
+    match /BZ/{id} {
       allow read, write: if true;
     }
 
     // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
     // security rules for this collection before publishing your app.
-    match /neww_stocks/{id} {
+    match /BE/{id} {
       allow read, write: if true;
     }
   }

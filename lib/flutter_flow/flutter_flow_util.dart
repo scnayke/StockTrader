@@ -10,6 +10,7 @@ import 'package:json_path/json_path.dart';
 
 import 'lat_lng.dart';
 
+export 'package:page_transition/page_transition.dart';
 export 'lat_lng.dart';
 export 'place.dart';
 
@@ -103,4 +104,11 @@ void showSnackbar(
       duration: Duration(seconds: duration),
     ),
   );
+}
+
+extension FFStringExt on String {
+  String maybeHandleOverflow({int maxChars, String replacement = ''}) =>
+      maxChars != null && length > maxChars
+          ? replaceRange(maxChars, null, replacement)
+          : this;
 }

@@ -52,7 +52,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
           ),
         ),
         title: Text(
-          widget.paramName,
+          'BE',
           style: FlutterFlowTheme.bodyText2.override(
             fontFamily: 'Source Sans Pro',
             color: FlutterFlowTheme.secondaryColor,

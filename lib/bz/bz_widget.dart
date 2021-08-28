@@ -80,7 +80,7 @@ class _BzWidgetState extends State<BzWidget> {
               ),
             ),
             title: Text(
-              bzCategoriesRecord.name,
+              'BZ',
               style: FlutterFlowTheme.bodyText2.override(
                 fontFamily: 'Source Sans Pro',
                 color: FlutterFlowTheme.secondaryColor,

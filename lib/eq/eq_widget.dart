@@ -81,7 +81,7 @@ class _EqWidgetState extends State<EqWidget> {
               ),
             ),
             title: Text(
-              eqCategoriesRecord.name,
+              'EQ',
               style: FlutterFlowTheme.bodyText2.override(
                 fontFamily: 'Source Sans Pro',
                 color: FlutterFlowTheme.secondaryColor,
@@ -283,6 +283,15 @@ class _EqWidgetState extends State<EqWidget> {
                                                         ),
                                                       )
                                                     ],
+                                                  ),
+                                                ),
+                                                Text(
+                                                  listViewEqRecord.series,
+                                                  style: FlutterFlowTheme
+                                                      .bodyText1
+                                                      .override(
+                                                    fontFamily:
+                                                        'Source Sans Pro',
                                                   ),
                                                 )
                                               ],

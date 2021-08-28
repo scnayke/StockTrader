@@ -80,7 +80,7 @@ class _BeWidgetState extends State<BeWidget> {
               ),
             ),
             title: Text(
-              beCategoriesRecord.name,
+              'BE',
               style: FlutterFlowTheme.bodyText2.override(
                 fontFamily: 'Source Sans Pro',
                 color: FlutterFlowTheme.secondaryColor,

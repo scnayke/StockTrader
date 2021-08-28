@@ -7,8 +7,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StocklistPageWidget extends StatefulWidget {
-  StocklistPageWidget({
+class EqWidget extends StatefulWidget {
+  EqWidget({
     Key key,
     this.paramName,
   }) : super(key: key);
@@ -16,10 +16,10 @@ class StocklistPageWidget extends StatefulWidget {
   final String paramName;
 
   @override
-  _StocklistPageWidgetState createState() => _StocklistPageWidgetState();
+  _EqWidgetState createState() => _EqWidgetState();
 }
 
-class _StocklistPageWidgetState extends State<StocklistPageWidget> {
+class _EqWidgetState extends State<EqWidget> {
   TextEditingController textController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -48,8 +48,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
             ),
           );
         }
-        List<CategoriesRecord> stocklistPageCategoriesRecordList =
-            snapshot.data;
+        List<CategoriesRecord> eqCategoriesRecordList = snapshot.data;
         // Customize what your widget looks like with no query results.
         if (snapshot.data.isEmpty) {
           return Container(
@@ -59,8 +58,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
             ),
           );
         }
-        final stocklistPageCategoriesRecord =
-            stocklistPageCategoriesRecordList.first;
+        final eqCategoriesRecord = eqCategoriesRecordList.first;
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
@@ -83,7 +81,7 @@ class _StocklistPageWidgetState extends State<StocklistPageWidget> {
               ),
             ),
             title: Text(
-              stocklistPageCategoriesRecord.name,
+              eqCategoriesRecord.name,
               style: FlutterFlowTheme.bodyText2.override(
                 fontFamily: 'Source Sans Pro',
                 color: FlutterFlowTheme.secondaryColor,

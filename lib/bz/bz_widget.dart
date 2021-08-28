@@ -174,6 +174,7 @@ class _BzWidgetState extends State<BzWidget> {
               Expanded(
                 child: StreamBuilder<List<BzRecord>>(
                   stream: queryBzRecord(
+                    queryBuilder: (bzRecord) => bzRecord.orderBy('NAME'),
                     limit: 50,
                   ),
                   builder: (context, snapshot) {
@@ -284,19 +285,6 @@ class _BzWidgetState extends State<BzWidget> {
                                                         ),
                                                       )
                                                     ],
-                                                  ),
-                                                ),
-                                                Text(
-                                                  listViewBzRecord.series,
-                                                  style: FlutterFlowTheme
-                                                      .bodyText2
-                                                      .override(
-                                                    fontFamily:
-                                                        'Source Sans Pro',
-                                                    color: FlutterFlowTheme
-                                                        .primaryColor,
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.bold,
                                                   ),
                                                 )
                                               ],

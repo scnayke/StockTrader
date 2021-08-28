@@ -175,6 +175,7 @@ class _EqWidgetState extends State<EqWidget> {
               Expanded(
                 child: StreamBuilder<List<EqRecord>>(
                   stream: queryEqRecord(
+                    queryBuilder: (eqRecord) => eqRecord.orderBy('NAME'),
                     limit: 50,
                   ),
                   builder: (context, snapshot) {
@@ -283,15 +284,6 @@ class _EqWidgetState extends State<EqWidget> {
                                                         ),
                                                       )
                                                     ],
-                                                  ),
-                                                ),
-                                                Text(
-                                                  listViewEqRecord.series,
-                                                  style: FlutterFlowTheme
-                                                      .bodyText1
-                                                      .override(
-                                                    fontFamily:
-                                                        'Source Sans Pro',
                                                   ),
                                                 )
                                               ],

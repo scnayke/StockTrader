@@ -174,6 +174,7 @@ class _BeWidgetState extends State<BeWidget> {
               Expanded(
                 child: StreamBuilder<List<BeRecord>>(
                   stream: queryBeRecord(
+                    queryBuilder: (beRecord) => beRecord.orderBy('NAME'),
                     limit: 50,
                   ),
                   builder: (context, snapshot) {
@@ -284,19 +285,6 @@ class _BeWidgetState extends State<BeWidget> {
                                                         ),
                                                       )
                                                     ],
-                                                  ),
-                                                ),
-                                                Text(
-                                                  listViewBeRecord.series,
-                                                  style: FlutterFlowTheme
-                                                      .bodyText2
-                                                      .override(
-                                                    fontFamily:
-                                                        'Source Sans Pro',
-                                                    color: FlutterFlowTheme
-                                                        .primaryColor,
-                                                    fontSize: 14,
-                                                    fontWeight: FontWeight.bold,
                                                   ),
                                                 )
                                               ],

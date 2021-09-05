@@ -531,8 +531,12 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                   onTap: () async {
                                     await Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => EqWidget(),
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                        reverseDuration:
+                                            Duration(milliseconds: 0),
+                                        child: EqWidget(),
                                       ),
                                     );
                                   },
@@ -587,8 +591,12 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                   onTap: () async {
                                     await Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => BzWidget(),
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                        reverseDuration:
+                                            Duration(milliseconds: 0),
+                                        child: BzWidget(),
                                       ),
                                     );
                                   },
@@ -643,8 +651,12 @@ class _HomeIndexPageWidgetState extends State<HomeIndexPageWidget> {
                                   onTap: () async {
                                     await Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => BeWidget(),
+                                      PageTransition(
+                                        type: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                        reverseDuration:
+                                            Duration(milliseconds: 0),
+                                        child: BeWidget(),
                                       ),
                                     );
                                   },

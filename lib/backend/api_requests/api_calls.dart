@@ -11,16 +11,3 @@ Future<dynamic> usersCall() {
     returnResponse: true,
   );
 }
-
-Future<dynamic> buyOrSellCall({
-  String objectID = '',
-}) {
-  return ApiManager.instance.makeApiCall(
-    callName: 'BuyOrSell',
-    apiUrl: 'https://predictlogreg1.herokuapp.com/predict/$objectID',
-    callType: ApiCallType.GET,
-    headers: {},
-    params: {},
-    returnResponse: true,
-  );
-}

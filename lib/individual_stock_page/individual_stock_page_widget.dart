@@ -42,7 +42,7 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
           ),
         ),
         title: Text(
-          '20MICRONS',
+          'INDEX',
           style: FlutterFlowTheme.title1.override(
             fontFamily: 'Montserrat',
             color: FlutterFlowTheme.secondaryColor,

@@ -1,3 +1,4 @@
+import '../backend/api_requests/api_calls.dart';
 import '../components/buy_sell_call_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -42,7 +43,7 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
           ),
         ),
         title: Text(
-          'Index',
+          '20MICRONS',
           style: FlutterFlowTheme.title1.override(
             fontFamily: 'Montserrat',
             color: FlutterFlowTheme.secondaryColor,
@@ -332,7 +333,27 @@ class _IndividualStockPageWidgetState extends State<IndividualStockPageWidget> {
                         )
                       ],
                     ),
-                    BuySellCallWidget(),
+                    FutureBuilder<dynamic>(
+                      future: buyOrSellCall(
+                        objectID: '20MICRONS.NS',
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: CircularProgressIndicator(
+                                color: FlutterFlowTheme.primaryColor,
+                              ),
+                            ),
+                          );
+                        }
+                        final buySellCallBuyOrSellResponse = snapshot.data;
+                        return BuySellCallWidget();
+                      },
+                    ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
                       child: Row(

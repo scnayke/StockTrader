@@ -5,6 +5,7 @@ import 'eq_record.dart';
 import 'bz_record.dart';
 import 'be_record.dart';
 import 'categories_record.dart';
+import 'stocks_record.dart';
 
 import 'index.dart';
 
@@ -20,6 +21,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   BzRecord,
   BeRecord,
   CategoriesRecord,
+  StocksRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

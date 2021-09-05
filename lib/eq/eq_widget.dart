@@ -175,11 +175,8 @@ class _EqWidgetState extends State<EqWidget> {
                 ],
               ),
               Expanded(
-                child: StreamBuilder<List<EqRecord>>(
-                  stream: queryEqRecord(
-                    queryBuilder: (eqRecord) => eqRecord.orderBy('NAME'),
-                    limit: 50,
-                  ),
+                child: StreamBuilder<List<StocksRecord>>(
+                  stream: queryStocksRecord(),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
@@ -193,7 +190,7 @@ class _EqWidgetState extends State<EqWidget> {
                         ),
                       );
                     }
-                    List<EqRecord> listViewEqRecordList = snapshot.data;
+                    List<StocksRecord> listViewStocksRecordList = snapshot.data;
                     // Customize what your widget looks like with no query results.
                     if (snapshot.data.isEmpty) {
                       return Material(
@@ -208,10 +205,10 @@ class _EqWidgetState extends State<EqWidget> {
                     return ListView.builder(
                       padding: EdgeInsets.zero,
                       scrollDirection: Axis.vertical,
-                      itemCount: listViewEqRecordList.length,
+                      itemCount: listViewStocksRecordList.length,
                       itemBuilder: (context, listViewIndex) {
-                        final listViewEqRecord =
-                            listViewEqRecordList[listViewIndex];
+                        final listViewStocksRecord =
+                            listViewStocksRecordList[listViewIndex];
                         return Container(
                           height: 90,
                           decoration: BoxDecoration(
@@ -254,7 +251,7 @@ class _EqWidgetState extends State<EqWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  listViewEqRecord.name,
+                                                  listViewStocksRecord.name,
                                                   style: FlutterFlowTheme.title2
                                                       .override(
                                                     fontFamily: 'Lato',
@@ -269,7 +266,7 @@ class _EqWidgetState extends State<EqWidget> {
                                                     children: [
                                                       Expanded(
                                                         child: AutoSizeText(
-                                                          listViewEqRecord
+                                                          listViewStocksRecord
                                                               .symbol,
                                                           style:
                                                               FlutterFlowTheme

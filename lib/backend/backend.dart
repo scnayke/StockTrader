@@ -9,6 +9,7 @@ import 'schema/eq_record.dart';
 import 'schema/bz_record.dart';
 import 'schema/be_record.dart';
 import 'schema/categories_record.dart';
+import 'schema/stocks_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -20,6 +21,7 @@ export 'schema/eq_record.dart';
 export 'schema/bz_record.dart';
 export 'schema/be_record.dart';
 export 'schema/categories_record.dart';
+export 'schema/stocks_record.dart';
 
 Stream<List<UserTableRecord>> queryUserTableRecord(
         {Query Function(Query) queryBuilder,
@@ -54,6 +56,13 @@ Stream<List<CategoriesRecord>> queryCategoriesRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(CategoriesRecord.collection, CategoriesRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<StocksRecord>> queryStocksRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(StocksRecord.collection, StocksRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(
